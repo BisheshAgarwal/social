@@ -1,0 +1,244 @@
+// Colors
+
+// Primary
+
+$color-primary-dark: hsl(300, 43%, 22%);
+$color-primary-light: hsl(333, 80%, 67%);
+
+// Neutral
+
+$color-grey-dark: hsl(303, 10%, 53%);
+$color-grey-light: hsl(300, 24%, 96%);
+
+//BASIC RESET
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.5rem;
+    font-family: 'Spartan', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.container {
+    margin: 5rem 0;
+    display: grid;
+    grid-template-rows: min-content min-content;
+    grid-template-columns: [full-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end];
+    grid-gap: 5rem;
+}
+
+//HEADING CONTAINER 
+
+.heading-container {
+    grid-column: center-start / col-end 4;
+
+    &__heading {
+        color: $color-primary-dark;
+        font-weight: 700;
+        font-size: 4.5rem;
+    }
+
+    &__text {
+        color: $color-grey-dark;
+    }
+}
+
+//REVIEWS
+
+.reviews {
+    grid-column: col-start 5 / center-end;
+    padding-top: 3rem;
+//    display: grid;
+
+    &__box {
+        display: flex;
+        align-items: center;
+
+        background-color: $color-grey-light;
+        padding: 1.5rem 2rem;
+        width: 80%;
+        border-radius: 5px;
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+
+        span {
+            font-size: 1.3rem;
+            color: $color-primary-dark;
+            font-weight: 700;
+            margin-left: 2rem;
+        }
+
+        &--2 {
+            transform: translateX(5rem);
+        }
+
+        &--3 {
+            transform: translateX(10rem);
+        }
+    }
+}
+
+.testimonials {
+    grid-column: center-start / center-end;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+
+    &__box {
+        background-color: $color-primary-dark;
+        padding: 5rem 3rem;
+        border-radius: 1rem;
+
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        grid-gap: 3rem;
+
+        &__text {
+            grid-column: 1 / span 2;
+            color: $color-grey-light;
+            font-size: 1.4rem;
+        }
+
+        img {
+            height: 4.5rem;
+            border-radius: 100%;
+        }
+
+        &__name {
+            display: block;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        &__verified {
+            color: $color-primary-light;
+            font-size: 1.4rem;
+        }
+
+        &--2 {
+            transform: translateY(2rem);
+        }
+
+        &--3 {
+            transform: translateY(4rem);
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    
+    html {
+        font-size: 56.25%;
+    }
+
+    .container {
+        grid-template-rows: min-content min-content;
+    }
+
+    .heading-container {
+
+        grid-column: center-start / center-end;
+
+        &__heading {
+            color: $color-primary-dark;
+            font-weight: 700;
+            font-size: 4.5rem;
+            width: 100%;
+
+        }
+
+        &__text {
+            color: $color-grey-dark;
+            width: 100%;
+        }
+    }
+
+    .reviews {
+        padding-top: 0;
+
+        grid-column: center-start / center-end;
+
+        &__box {
+            padding: 1.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            span {
+                font-size: 1.3rem;
+                color: $color-primary-dark;
+                font-weight: 700;
+                margin-left: 0;
+            }
+
+            &--2 {
+                transform: translateX(0);
+            }
+
+            &--3 {
+                transform: translateX(0);
+            }
+        }
+    }
+
+    .testimonials {
+        grid-column: center-start / center-end;
+        grid-template-columns: 1fr;
+        display: grid;
+        grid-row-gap: 3rem;
+
+        &__box {
+            padding: 5rem 3rem;
+
+            &__text {
+                font-size: 1.4rem;
+            }
+
+            &__verified {
+                font-size: 1.4rem;
+            }
+
+            &--2 {
+                transform: translateY(0);
+            }
+
+            &--3 {
+                transform: translateY(0);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    html {
+        font-size: 43.75%;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    html {
+        font-size: 40%;
+    }
+}
