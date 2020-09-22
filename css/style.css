@@ -8,6 +8,23 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box; }
+  html::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/bg-pattern-top-desktop.svg); }
+  html::after {
+    content: "";
+    position: fixed;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-image: url(../images/bg-pattern-bottom-desktop.svg);
+    z-index: 10; }
 
 body {
   font-size: 1.5rem;
